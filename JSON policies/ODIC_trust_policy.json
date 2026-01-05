@@ -1,0 +1,18 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"Federated": "arn:aws:iam::992250719774:oidc-provider/sts.windows.net/33e01921-4d64-4f8c-a055-5bdaffd5e33d/"
+			},
+			"Action": "sts:AssumeRoleWithWebIdentity",
+			"Condition": {
+				"StringEquals": {
+					"sts.windows.net/33e01921-4d64-4f8c-a055-5bdaffd5e33d/:aud": "api://1462b192-27f7-4cb9-8523-0f4ecb54b47e",
+					"sts:RoleSessionName": "MicrosoftSentinel_9b8a04cb-f681-4480-80d2-f94a33af169a"
+				}
+			}
+		}
+	]
+}
