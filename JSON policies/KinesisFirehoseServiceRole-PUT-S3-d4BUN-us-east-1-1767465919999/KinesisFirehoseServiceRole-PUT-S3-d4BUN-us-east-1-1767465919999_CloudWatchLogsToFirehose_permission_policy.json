@@ -1,0 +1,14 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [
+				"firehose:PutRecord",
+				"firehose:PutRecordBatch"
+			],
+			"Resource": "arn:aws:firehose:us-east-1:992250719774:deliverystream/PUT-S3-d4BUN"
+		}
+	]
+}
