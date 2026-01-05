@@ -21,7 +21,19 @@
 				"sqs:DeleteMessage",
 				"sqs:GetQueueAttributes"
 			],
-			"Resource": "arn:aws:sqs:us-east-1:992250719774:decoy-log-processor-queue"
+			"Resource": [
+				"arn:aws:sqs:us-east-1:992250719774:decoy-log-processor-queue",
+				"arn:aws:sqs:us-east-1:992250719774:Sentinel-GuardDuty-Notification-Queue"
+			]
+		},
+		{
+			"Sid": "KMSDecryptAccess",
+			"Effect": "Allow",
+			"Action": [
+				"kms:Decrypt",
+				"kms:DescribeKey"
+			],
+			"Resource": "arn:aws:kms:us-east-1:992250719774:key/70f6a72c-cbbd-4e66-a1a6-6962e9c23031"
 		}
 	]
 }
