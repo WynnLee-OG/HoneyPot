@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Secure Employee Login" />
+  <title>Secure Employee Login</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#111a33;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --accent: #7c3aed;
+      --shadow: 0 16px 50px rgba(0,0,0,.38);
+      --radius: 16px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 15% 10%, rgba(124,58,237,.26), transparent 55%),
+        radial-gradient(900px 520px at 90% 18%, rgba(34,197,94,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:420px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+
+    .header{
+      padding:18px 18px 12px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .title{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+
+    .subtext{
+      margin:6px 0 0;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .body{
+      padding:18px;
+    }
+
+    .field{
+      margin-bottom:12px;
+    }
+
+    label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin:0 0 6px;
+    }
+
+    input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      outline:none;
+    }
+
+    input::placeholder{color:rgba(255,255,255,.45)}
+
+    input:focus{
+      border-color: rgba(124,58,237,.55);
+      box-shadow: 0 0 0 3px rgba(124,58,237,.25);
+    }
+
+    .actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    button{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.92), rgba(34,197,94,.70));
+      color:#fff;
+      font-weight:600;
+      letter-spacing:.2px;
+      width:100%;
+      transition: filter .15s ease, transform .08s ease;
+    }
+
+    button:hover{filter:brightness(1.03)}
+    button:active{transform: translateY(1px)}
+
+    .footer{
+      padding:14px 18px 18px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .fineprint{
+      border-top:1px solid var(--line);
+      padding-top:12px;
+      margin-top:12px;
+    }
+
+    a{color:inherit;text-decoration:underline}
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" role="main" aria-label="Secure Employee Login">
+    <section class="header">
+      <h1 class="title">Employee Login Portal</h1>
+      <p class="subtext">Authorized users only</p>
+    </section>
+
+    <section class="body">
+      <form method="POST" action="/login" aria-label="Employee login form">
+        <div class="field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="e.g., jdoe"
+            autocomplete="username"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+
+        <div class="actions">
+          <button type="submit">Sign in</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="footer" aria-label="Login notice">
+      <div class="fineprint">
+        <strong>Secure Employee Login</strong><br />
+        Unauthorized access is prohibited. Activity may be monitored for security purposes.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
